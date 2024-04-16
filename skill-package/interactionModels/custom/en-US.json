@@ -1,0 +1,121 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "questionNumber",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isLessThan",
+                  "prompt": "Slot.Validation.944277825936.234976542008.445072637924",
+                  "value": "53"
+                },
+                {
+                  "type": "isGreaterThan",
+                  "prompt": "Slot.Validation.944277825936.234976542008.380155302783",
+                  "value": "0"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.944277825936.234976542008"
+              }
+            }
+          ],
+          "name": "QuestionNumberIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "questionNumber",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "fifty two",
+                "forty six",
+                "three",
+                "one"
+              ]
+            }
+          ],
+          "name": "QuestionNumberIntent",
+          "samples": [
+            "{questionNumber}",
+            "ask question {questionNumber}",
+            "give me question {questionNumber}",
+            "what is question number {questionNumber}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "NextQuestionIntent",
+          "samples": [
+            "next",
+            "begin"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "new city catechism"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please provide a number between one and fifty two"
+          }
+        ],
+        "id": "Slot.Validation.944277825936.234976542008.445072637924"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please provide a number between one and fifty two"
+          }
+        ],
+        "id": "Slot.Validation.944277825936.234976542008.380155302783"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which question number?"
+          }
+        ],
+        "id": "Elicit.Slot.944277825936.234976542008"
+      }
+    ]
+  }
+}
